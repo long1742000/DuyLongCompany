@@ -3,11 +3,12 @@
     height: 100vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     overflow: hidden;
+    background-color: rgb(215, 215, 215);
 
     .form-login {
         position: absolute;
         background-color: white;
-        box-shadow: 0 0 15px 10px rgb(229, 229, 229);
+        box-shadow: 0 0 15px 10px rgb(190, 190, 190);
         width: 300px;
         height: 70%;
         top: 50%;
@@ -17,12 +18,15 @@
 
         .logo {
             position: absolute;
-            top: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            z-index: 1;
+            transition: 0.5s;
 
             img {
-                width: 50px;
+                width: 150px;
                 transition: 0.5s;
-                opacity: 0;
+                opacity: 1;
             }
         }
 
@@ -70,6 +74,11 @@
                 input:focus {
                     outline: none;
                 }
+
+                .icon {
+                    opacity: 0;
+                    transition: 0.5s;
+                }
             }
 
             .password {
@@ -87,6 +96,11 @@
                 input:focus {
                     outline: none;
                 }
+
+                .icon {
+                    opacity: 0;
+                    transition: 0.5s;
+                }
             }
 
             .button {
@@ -98,18 +112,15 @@
                 right: 100px;
                 transition: 0.5s;
                 cursor: pointer;
-            }
-
-            .button:hover {
-                opacity: 0.7;
+                opacity: 0;
             }
         }
     }
 
     .form-login:hover {
-        img {
-            width: 150px;
-            opacity: 1;
+        .logo {
+            top: 0;
+            transform: translate(0, 0);
         }
 
         .decore1 {
@@ -127,6 +138,10 @@
                 input {
                     width: 70%;
                 }
+
+                .icon {
+                    opacity: 1;
+                }
             }
 
             .password {
@@ -135,10 +150,19 @@
                 input {
                     width: 70%;
                 }
+
+                .icon {
+                    opacity: 1;
+                }
             }
 
             .button {
                 right: 0;
+                opacity: 1;
+            }
+
+            .button:hover {
+                opacity: 0.7;
             }
         }
 

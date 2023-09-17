@@ -60,12 +60,12 @@ const Login = () => {
                     {/* Login form */}
                     <div className='form'>
                         <div className='username'>
-                            <i className="fa-solid fa-user"></i>
+                            <i className="fa-solid fa-user icon"></i>
                             <input type='text' placeholder='Username' onChange={(e) => { setUsername(e.target.value) }}></input>
                         </div>
 
                         <div className='password'>
-                            <i className="fa-solid fa-key"></i>
+                            <i className="fa-solid fa-key icon"></i>
                             <input type='password' placeholder='Password' onChange={(e) => { setPassword(e.target.value) }}></input>
                         </div>
 
