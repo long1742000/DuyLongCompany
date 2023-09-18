@@ -24,7 +24,7 @@
             transition: 0.5s;
 
             img {
-                width: 150px;
+                width: 100px;
                 transition: 0.5s;
                 opacity: 1;
             }
@@ -166,5 +166,12 @@
             }
         }
 
+    }
+
+    @media screen and (min-height: 800px) {
+        .form-login {
+            width: 50%;
+            height: 60%;
+        }
     }
 }

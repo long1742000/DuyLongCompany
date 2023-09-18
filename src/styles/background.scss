@@ -1,0 +1,36 @@
+.background {
+    position: relative;
+    min-height: 100vh;
+    background-color: rgb(239, 239, 239);
+    overflow: hidden;
+
+    .decore1 {
+        position: absolute;
+        width: 1000px;
+        height: 1000px;
+        background-color: black;
+        transform: rotate(30deg);
+        top: -100%;
+        left: -30%;
+    }
+
+    .decore2 {
+        position: absolute;
+        width: 1000px;
+        height: 1000px;
+        background-color: black;
+        transform: rotate(70deg);
+        bottom: -130%;
+        left: -20%;
+    }
+
+    .decore3 {
+        position: absolute;
+        width: 1000px;
+        height: 1000px;
+        background-color: gray;
+        transform: rotate(30deg);
+        top: -100%;
+        left: -30%;
+    }
+}
