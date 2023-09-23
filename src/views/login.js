@@ -4,6 +4,11 @@ import { account } from '../data/account';
 import { useEffect, useState } from 'react';
 import Toast from '../components/toast';
 import Icon from '../data/icon';
+import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { checkLogin, checkAccount } from '../common/userController';
+import store from '../redux/store/store';
+import { login } from '../redux/actions/accountAction';
 
 const Login = () => {
 
@@ -12,6 +17,19 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [icon, setIcon] = useState('');
     const [mess, setMess] = useState('');
+
+    // Navigate
+    const navigate = useNavigate();
+
+    // Redux hook
+    const dispatch = useDispatch();
+
+    // ComponentDidUpdate
+    useEffect(() => {
+        if (checkLogin()) {
+            navigate('/');
+        }
+    }, [store.getState('acc')])
 
     // set error function
     const setError = (icon, mess) => {
@@ -33,13 +51,15 @@ const Login = () => {
             setError(Icon.danger, 'Please type all information');
         }
         else {
-            if (username !== account.username || password !== account.password) {
+            const acc = { username: username, password: password };
+            if (!checkAccount(acc)) {
                 setError(Icon.danger, 'Something was wrong');
             }
 
             // Success
             else {
-                setError(Icon.success, 'Success !!!');
+                dispatch(login(checkAccount(acc)));
+                navigate('/');
             }
         }
     }
