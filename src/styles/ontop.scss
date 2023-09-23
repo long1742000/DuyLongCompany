@@ -1,0 +1,20 @@
+.onTop {
+    position: fixed;
+    background-color: rgb(240, 240, 240);
+    bottom: -100%;
+    right: 310px;
+    font-size: 20px;
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    opacity: 0.5;
+}
+
+.onTop:hover {
+    background-color: rgb(200, 200, 200);
+    color: white;
+}
+
+.display {
+    bottom: 10px;
+}

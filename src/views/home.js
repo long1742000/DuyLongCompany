@@ -9,13 +9,8 @@ const Home = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!checkLogin()) {
-            navigate('/login');
-        }
-        else {
-            console.log('user: ', store.getState('acc'));
-        }
-    }, [store.getState('acc')])
+
+    }, [])
 
     return (
         <>

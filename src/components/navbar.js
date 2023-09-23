@@ -3,6 +3,7 @@ import '../styles/navbar.scss';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { logout } from '../redux/actions/accountAction';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -33,7 +34,6 @@ const Navbar = () => {
     // Logout
     const clickSignOut = () => {
         dispatch(logout(JSON.parse(localStorage.getItem('account'))));
-        navigate('/login');
     }
 
     return (
@@ -59,51 +59,96 @@ const Navbar = () => {
                     <br></br>
 
                     <h1>SERVICES</h1>
-                    <p className='hello'>Hello {user.lastname}, what do you want us to do ?</p>
+                    {user &&
+                        <p className='hello'>Hello {user.lastname}, what do you want us to do ?</p>
+                    }
+                    {!user &&
+                        <p onClick={() => { navigate('/login') }} className='hello'>Hello guest, sign in to use our services?</p>
+                    }
                     <hr></hr>
 
                     {/* MENU LIST */}
                     <ul>
-                        <li onClick={() => { search() }}>
-                            <a>Search service</a>
-                            <div className='icon'>
-                                <i className="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <a href='#'>About Front End</a>
-                            <div className='icon'>
-                                <i className="fa-solid fa-code"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <a href='#'>About Back End</a>
-                            <div className='icon'>
-                                <i className="fa-solid fa-gears"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <a href='#'>Database design</a>
-                            <div className='icon'>
-                                <i className="fa-solid fa-database"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <a href='#'>Fullstack</a>
-                            <div className='icon'>
-                                <i className="fa-solid fa-layer-group"></i>
-                            </div>
-                        </li>
+                        <a className={user ? '' : 'guest'}>
+                            <li onClick={user ? () => { search() } : () => { console.log('sign in please') }}>
+                                Search service
+                                <div className='icon'>
+                                    <i className="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                            </li>
+                        </a>
+                        <a className={user ? '' : 'guest'} href='#'>
+                            <li>
+                                About Front End
+                                <div className='icon'>
+                                    <i className="fa-solid fa-code"></i>
+                                </div>
+                            </li>
+                        </a>
+                        <a className={user ? '' : 'guest'} href='#'>
+                            <li>
+                                About Back End
+                                <div className='icon'>
+                                    <i className="fa-solid fa-gears"></i>
+                                </div>
+                            </li>
+                        </a>
+                        <a className={user ? '' : 'guest'} href='#'>
+                            <li>
+                                Database design
+                                <div className='icon'>
+                                    <i className="fa-solid fa-database"></i>
+                                </div>
+                            </li>
+                        </a>
+                        <a className={user ? '' : 'guest'} href='#'>
+                            <li>
+                                Fullstack
+                                <div className='icon'>
+                                    <i className="fa-solid fa-layer-group"></i>
+                                </div>
+                            </li>
+                        </a>
                     </ul>
 
-                    <ul className='sign-out'>
-                        <li>
-                            <a onClick={() => { clickSignOut() }}>Sign out</a>
-                            <div className='icon'>
-                                <i className="fa-solid fa-right-from-bracket"></i>
-                            </div>
-                        </li>
+                    <p className='hello'>Or do you want to learn about us ?</p>
+                    <hr></hr>
+
+                    <ul>
+                        <a href='#'>
+                            <li>
+                                About DL
+                                <div className='icon'>
+                                    <i className="fa-solid fa-people-group"></i>
+                                </div>
+                            </li>
+                        </a>
+                        <a href='#'>
+                            <li>
+                                Our history
+                                <div className='icon'>
+                                    <i className="fa-solid fa-book-bookmark"></i>
+                                </div>
+                            </li>
+                        </a>
                     </ul>
+
+                    {localStorage.getItem('user') &&
+                        <>
+                            <hr></hr>
+
+                            <ul className='sign-out'>
+                                <a onClick={() => { clickSignOut() }}>
+                                    <li>
+                                        Sign out
+                                        <div className='icon'>
+                                            <i className="fa-solid fa-right-from-bracket"></i>
+                                        </div>
+                                    </li>
+                                </a>
+                            </ul>
+                        </>
+                    }
                 </div>
             </div>
 

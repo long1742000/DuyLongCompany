@@ -71,6 +71,11 @@
             list-style: none;
             padding-left: 0;
 
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
             li {
                 background-color: white;
                 padding: 10px;
@@ -79,12 +84,6 @@
                 transition: 0.5s;
                 position: relative;
                 overflow: hidden;
-
-                a {
-                    text-decoration: none;
-                    color: black;
-                    width: 100%;
-                }
 
                 .icon {
                     position: absolute;
@@ -101,6 +100,10 @@
                     top: 10px;
                     transform: rotate(360deg);
                 }
+            }
+
+            .guest {
+                text-decoration: line-through;
             }
         }
 

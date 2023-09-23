@@ -5,7 +5,7 @@ import Home from './views/home';
 import Login from './views/login';
 import Contact from './components/contact';
 import { Route, Routes } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { OnTop } from './components/onTop';
 
 function App() {
 
@@ -16,7 +16,11 @@ function App() {
           <Navbar></Navbar>
 
           <div className='content'>
+
+            {/* ------Content------ */}
             <Home></Home>
+
+            <OnTop></OnTop>
           </div>
           <Contact></Contact>
 
