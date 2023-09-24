@@ -19,7 +19,7 @@ setTimeout(() => {
 
 export const OnTop = () => {
     return (
-        <div className='onTop display'>
+        <div className='onTop'>
             <i className="fa-solid fa-chevron-up"></i>
         </div>
     )

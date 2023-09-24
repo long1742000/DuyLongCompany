@@ -64,6 +64,10 @@
 
 @media screen and (max-width: 1200px) {
     .background {
+        .content {
+            width: 70%;
+        }
+
         .decoreX {
             left: -40%;
         }
@@ -80,6 +84,10 @@
 
 @media screen and (max-width: 1100px) {
     .background {
+        .content {
+            width: 75%;
+        }
+
         .decoreX {
             left: -50%;
         }
@@ -96,6 +104,10 @@
 
 @media screen and (max-width: 950px) {
     .background {
+        .content {
+            width: 80%;
+        }
+
         .decoreX {
             left: -60%;
         }
@@ -144,6 +156,10 @@
 
 @media screen and (max-width: 700px) {
     .background {
+        .content {
+            width: 90%;
+        }
+
         .decoreX {
             top: -130%;
         }
@@ -178,6 +194,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    .content {
+        width: 95%;
+    }
+
     .background {
         .decoreX {
             top: -120%;

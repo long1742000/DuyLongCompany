@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/navbar.scss';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { logout } from '../redux/actions/accountAction';
 import { NavLink } from 'react-router-dom';
+import store from '../redux/store/store';
 
 const Navbar = () => {
 
@@ -35,6 +36,11 @@ const Navbar = () => {
     const clickSignOut = () => {
         dispatch(logout(JSON.parse(localStorage.getItem('account'))));
     }
+
+    // componentDidUpdate
+    useEffect(() => {
+
+    }, [])
 
     return (
         <>
