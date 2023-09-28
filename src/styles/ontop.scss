@@ -6,15 +6,11 @@
     font-size: 20px;
     padding: 8px 10px;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.2s;
     opacity: 0.5;
 }
 
 .onTop:hover {
     background-color: rgb(200, 200, 200);
     color: white;
-}
-
-.display {
-    bottom: 10px;
 }

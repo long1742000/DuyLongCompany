@@ -1,252 +1,257 @@
-.background {
+.dad {
     position: relative;
-    min-height: 100vh;
-    background-color: rgb(239, 239, 239);
     overflow: hidden;
 
-    .content {
+    .background {
         position: relative;
-        width: 60%;
-        background-color: white;
         min-height: 100vh;
-        margin: auto;
-        z-index: 1;
+        background-color: rgb(239, 239, 239);
         overflow: hidden;
-    }
 
-    .decoreX {
-        position: fixed;
-        width: 1000px;
-        height: 1000px;
-        background-color: black;
-        transform: rotate(30deg);
-        top: -100%;
-        left: -30%;
-        transition: 0.5s;
-    }
-
-    .decoreY {
-        position: fixed;
-        width: 1000px;
-        height: 1000px;
-        background-color: rgb(121, 121, 121);
-        transform: rotate(70deg);
-        bottom: -130%;
-        left: -20%;
-        transition: 0.5s;
-    }
-
-    .decoreZ {
-        position: fixed;
-        width: 1000px;
-        height: 1000px;
-        background-color: rgb(205, 205, 205);
-        transform: rotate(60deg);
-        top: 10px;
-        right: -50%;
-        transition: 0.5s;
-    }
-}
-
-.background:hover {
-    .decoreX {
-        transform: rotate(32deg);
-    }
-
-    .decoreY {
-        transform: rotate(72deg);
-    }
-
-    .decoreZ {
-        transform: rotate(62deg);
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .background {
         .content {
-            width: 70%;
+            position: relative;
+            width: 60%;
+            background-color: white;
+            min-height: 100vh;
+            margin: auto;
+            z-index: 1;
+            overflow: hidden;
         }
 
         .decoreX {
-            left: -40%;
-        }
-
-        .decoreY {
+            position: fixed;
+            width: 1000px;
+            height: 1000px;
+            background-color: black;
+            transform: rotate(30deg);
+            top: -100%;
             left: -30%;
+            transition: 0.5s;
+        }
+
+        .decoreY {
+            position: fixed;
+            width: 1000px;
+            height: 1000px;
+            background-color: rgb(121, 121, 121);
+            transform: rotate(70deg);
+            bottom: -130%;
+            left: -20%;
+            transition: 0.5s;
         }
 
         .decoreZ {
-            right: -60%;
+            position: fixed;
+            width: 1000px;
+            height: 1000px;
+            background-color: rgb(205, 205, 205);
+            transform: rotate(60deg);
+            top: 10px;
+            right: -50%;
+            transition: 0.5s;
         }
     }
-}
 
-@media screen and (max-width: 1100px) {
-    .background {
+    .background:hover {
+        .decoreX {
+            transform: rotate(32deg);
+        }
+
+        .decoreY {
+            transform: rotate(72deg);
+        }
+
+        .decoreZ {
+            transform: rotate(62deg);
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .background {
+            .content {
+                width: 70%;
+            }
+
+            .decoreX {
+                left: -40%;
+            }
+
+            .decoreY {
+                left: -30%;
+            }
+
+            .decoreZ {
+                right: -60%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+        .background {
+            .content {
+                width: 75%;
+            }
+
+            .decoreX {
+                left: -50%;
+            }
+
+            .decoreY {
+                left: -40%;
+            }
+
+            .decoreZ {
+                right: -70%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 950px) {
+        .background {
+            .content {
+                width: 80%;
+            }
+
+            .decoreX {
+                left: -60%;
+            }
+
+            .decoreY {
+                left: -50%;
+            }
+
+            .decoreZ {
+                right: -80%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 850px) {
+        .background {
+            .decoreX {
+                left: -70%;
+            }
+
+            .decoreY {
+                left: -60%;
+            }
+
+            .decoreZ {
+                right: -90%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 770px) {
+        .background {
+            .decoreX {
+                top: -110%;
+            }
+
+            .decoreY {
+                bottom: -140%;
+            }
+
+            .decoreZ {
+                right: -120%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .background {
+            .content {
+                width: 90%;
+            }
+
+            .decoreX {
+                top: -130%;
+            }
+
+            .decoreY {
+                bottom: -140%;
+                left: -80%;
+            }
+
+            .decoreZ {
+                right: -150%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .background {
+            .decoreX {
+                top: -120%;
+                left: -100%;
+            }
+
+            .decoreY {
+                bottom: -140%;
+                left: -90%;
+            }
+
+            .decoreZ {
+                right: -190%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 500px) {
         .content {
-            width: 75%;
+            width: 95%;
         }
 
-        .decoreX {
-            left: -50%;
-        }
+        .background {
+            .decoreX {
+                top: -120%;
+                left: -110%;
+            }
 
-        .decoreY {
-            left: -40%;
-        }
+            .decoreY {
+                bottom: -140%;
+                left: -100%;
+            }
 
-        .decoreZ {
-            right: -70%;
-        }
-    }
-}
-
-@media screen and (max-width: 950px) {
-    .background {
-        .content {
-            width: 80%;
-        }
-
-        .decoreX {
-            left: -60%;
-        }
-
-        .decoreY {
-            left: -50%;
-        }
-
-        .decoreZ {
-            right: -80%;
+            .decoreZ {
+                right: -210%;
+            }
         }
     }
-}
 
-@media screen and (max-width: 850px) {
-    .background {
-        .decoreX {
-            left: -70%;
-        }
+    @media screen and (max-width: 500px) {
+        .background {
+            .decoreX {
+                top: -130%;
+                left: -110%;
+            }
 
-        .decoreY {
-            left: -60%;
-        }
+            .decoreY {
+                bottom: -150%;
+                left: -120%;
+            }
 
-        .decoreZ {
-            right: -90%;
-        }
-    }
-}
-
-@media screen and (max-width: 770px) {
-    .background {
-        .decoreX {
-            top: -110%;
-        }
-
-        .decoreY {
-            bottom: -140%;
-        }
-
-        .decoreZ {
-            right: -120%;
+            .decoreZ {
+                right: -230%;
+            }
         }
     }
-}
 
-@media screen and (max-width: 700px) {
-    .background {
-        .content {
-            width: 90%;
-        }
+    @media screen and (max-width: 400px) {
+        .background {
+            .decoreX {
+                top: -130%;
+                left: -130%;
+            }
 
-        .decoreX {
-            top: -130%;
-        }
+            .decoreY {
+                bottom: -150%;
+                left: -150%;
+            }
 
-        .decoreY {
-            bottom: -140%;
-            left: -80%;
-        }
-
-        .decoreZ {
-            right: -150%;
-        }
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .background {
-        .decoreX {
-            top: -120%;
-            left: -100%;
-        }
-
-        .decoreY {
-            bottom: -140%;
-            left: -90%;
-        }
-
-        .decoreZ {
-            right: -190%;
-        }
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .content {
-        width: 95%;
-    }
-
-    .background {
-        .decoreX {
-            top: -120%;
-            left: -110%;
-        }
-
-        .decoreY {
-            bottom: -140%;
-            left: -100%;
-        }
-
-        .decoreZ {
-            right: -210%;
-        }
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .background {
-        .decoreX {
-            top: -130%;
-            left: -110%;
-        }
-
-        .decoreY {
-            bottom: -150%;
-            left: -120%;
-        }
-
-        .decoreZ {
-            right: -230%;
-        }
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .background {
-        .decoreX {
-            top: -130%;
-            left: -130%;
-        }
-
-        .decoreY {
-            bottom: -150%;
-            left: -150%;
-        }
-
-        .decoreZ {
-            right: -250%;
+            .decoreZ {
+                right: -250%;
+            }
         }
     }
 }

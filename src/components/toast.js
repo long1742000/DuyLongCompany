@@ -5,13 +5,13 @@ const Toast = (props) => {
     useEffect(() => {
         const toast = document.getElementsByClassName('toast')[0];
 
-        if (props.mess !== '') {            // If something was wrong
+        if (props.toast !== '') {            // If something was wrong
             toast.classList.add('error');
         }
         else {
             toast.classList.remove('error');
         }
-    }, [props.mess]);
+    }, [props]);
 
     return (
         <>
@@ -19,13 +19,13 @@ const Toast = (props) => {
                 {/* Icon */}
                 <div className="logo">
                     <div className="icon">
-                        <i className={props.icon}></i>
+                        <i className={props.toast.icon}></i>
                     </div>
                 </div>
 
                 {/* Messsage */}
                 <div className="message">
-                    <p>{props.mess}</p>
+                    <p>{props.toast.mess}</p>
                 </div>
 
                 {/* Timer */}

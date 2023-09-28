@@ -5,10 +5,10 @@ setTimeout(() => {
 
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 100) {
-            toTop.classList.add('display');
+            toTop.style.bottom = '10px';
         }
         else {
-            toTop.classList.remove('display');
+            toTop.style.bottom = '-50px';
         }
     })
 

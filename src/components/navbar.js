@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { logout } from '../redux/actions/accountAction';
 import { NavLink } from 'react-router-dom';
-import store from '../redux/store/store';
+import { turnOn } from '../redux/actions/alertAction';
 
 const Navbar = () => {
 
@@ -34,12 +34,14 @@ const Navbar = () => {
 
     // Logout
     const clickSignOut = () => {
-        dispatch(logout(JSON.parse(localStorage.getItem('account'))));
+        dispatch(turnOn('If you sign out, you cannot use our services. Continue ?', 'Sign out', 'logout', 'fa-solid fa-right-from-bracket'));
     }
 
     // componentDidUpdate
     useEffect(() => {
+        if (user) {
 
+        }
     }, [])
 
     return (

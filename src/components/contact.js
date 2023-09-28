@@ -10,16 +10,12 @@ const Contact = () => {
                 <p>phamduylong1742000@gmail.com</p>
             </div>
 
-            <br></br>
-
             <div className='infor phone'>
                 <div className='icon'>
                     <i className="fa-solid fa-headset i"></i>
                 </div>
                 <p>0366310650 - 0933694478</p>
             </div>
-
-            <br></br>
 
             <div className='infor text'>
                 <div className='icon'>

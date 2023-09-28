@@ -1,22 +1,18 @@
 import '../styles/login.scss';
 import '../styles/toast.scss';
-import { account } from '../data/account';
 import { useEffect, useState } from 'react';
-import Toast from '../components/toast';
 import Icon from '../data/icon';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { checkLogin, checkAccount } from '../common/userController';
-import store from '../redux/store/store';
 import { login } from '../redux/actions/accountAction';
+import { click } from '../common/toastController';
 
 const Login = () => {
 
     // State
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [icon, setIcon] = useState('');
-    const [mess, setMess] = useState('');
 
     // Navigate
     const navigate = useNavigate();
@@ -29,38 +25,29 @@ const Login = () => {
         if (checkLogin()) {
             navigate('/');
         }
-    }, [store.getState('acc')])
-
-    // set error function
-    const setError = (icon, mess) => {
-
-        // set icon and mess when something was wrong
-        setIcon(icon);
-        setMess(mess);
-
-        // then set them to blank after 3s when we already used them
-        setTimeout(() => {
-            setIcon('');
-            setMess('');
-        }, 3000)
-    }
+    }, [])
 
     // function control the user when they tried to sign in
     const signIn = () => {
         if (username === '' || password === '') {
-            setError(Icon.danger, 'Please type all information');
+            click(Icon.danger, 'Please type all information !!!');
         }
         else {
-            const acc = { username: username, password: password };
-            if (!checkAccount(acc)) {
-                setError(Icon.danger, 'Something was wrong');
-            }
+            click(Icon.waiting, 'Wait a sec...');
 
-            // Success
-            else {
-                dispatch(login(checkAccount(acc)));
-                navigate('/');
-            }
+            setTimeout(() => {
+                const acc = { username: username, password: password };
+                if (!checkAccount(acc)) {
+                    click(Icon.danger, 'Something was wrong');
+                }
+
+                // Success
+                else {
+                    dispatch(login(checkAccount(acc)));
+                    click(Icon.success, 'You logged in !!!');
+                    navigate('/');
+                }
+            }, 3000)
         }
     }
 
@@ -92,16 +79,10 @@ const Login = () => {
                         <br></br>
 
                         <a onClick={() => { signIn() }} className='button'>
-                            Sign in
+                            Sign in <i className="fa-solid fa-right-to-bracket"></i>
                         </a>
                     </div>
                 </div>
-
-                {/* Reporter */}
-                <Toast
-                    icon={icon}
-                    mess={mess}
-                ></Toast>
             </div>
         </>
     )

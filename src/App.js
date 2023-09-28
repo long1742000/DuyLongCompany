@@ -6,31 +6,57 @@ import Login from './views/login';
 import Contact from './components/contact';
 import { Route, Routes } from 'react-router-dom';
 import { OnTop } from './components/onTop';
+import store from './redux/store/store';
+import { useEffect, useState } from 'react';
+import Toast from './components/toast';
+import Alert from './components/alert';
 
 function App() {
 
+  const [reduxState, setReduxState] = useState(store.getState());
+
+  // Check redux state changed function
+  const checkChanged = () => {
+
+    // Using setInterval to check redux state every 0.5s
+    setInterval(() => {
+      // If redux state changed
+      if (reduxState !== store.getState()) {
+        setReduxState(store.getState())
+      }
+    }, 500)
+  }
+
+  useEffect(() => {
+    checkChanged();
+  }, [reduxState])
+
   return (
-    <Routes>
-      <Route path="/" element={
-        <div className='background'>
-          <Navbar></Navbar>
+    <div className='dad'>
+      <Routes>
+        <Route path="/" element={
+          <div className='background'>
+            <Navbar></Navbar>
 
-          <div className='content'>
+            <div className='content'>
 
-            {/* ------Content------ */}
-            <Home></Home>
+              {/* ------Content------ */}
+              <Home></Home>
 
-            <OnTop></OnTop>
+            </div>
+
+            <div className='decoreX'></div>
+            <div className='decoreY'></div>
+            <div className='decoreZ'></div>
           </div>
-          <Contact></Contact>
-
-          <div className='decoreX'></div>
-          <div className='decoreY'></div>
-          <div className='decoreZ'></div>
-        </div>
-      } />
-      <Route path="/login" element={<Login />} />
-    </Routes>
+        } />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <OnTop></OnTop>
+      <Contact></Contact>
+      <Toast toast={reduxState.toast}></Toast>
+      <Alert alert={reduxState.alert}></Alert>
+    </div >
   );
 }
 
