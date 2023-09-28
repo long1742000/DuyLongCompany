@@ -22,7 +22,7 @@ const Alert = (props) => {
             setI(props.alert.icon);
         }
         else {
-            alert.style.top = '-100%';
+            alert.style.top = '-120%';
         }
 
     }, [props])
@@ -38,18 +38,26 @@ const Alert = (props) => {
 
     return (
         <div className='alert'>
+
+            {/* Header */}
             <div className='header'>
                 <div className='title'>
                     <img src={require('../assets/images/logo.png')} alt='Loading...'></img>
                 </div>
                 <i onClick={() => { dispatch(turnOff()) }} className="fa-solid fa-xmark"></i>
             </div>
+
+            {/* Body */}
             <div className='body'>
                 <p>{props.alert.mess}</p>
             </div>
+
+            {/* Footer */}
             <div className='footer'>
                 <div className='button'>
-                    <a onClick={() => { clickYes(props.alert.controller) }} className='yes'>{props.alert.button} <i className={i}></i></a>
+                    {props.alert.button !== '' &&
+                        <a onClick={() => { clickYes(props.alert.controller) }} className='yes'>{props.alert.button} <i className={i}></i></a>
+                    }
                     <a onClick={() => { dispatch(turnOff()) }} className='no'>Cancel</a>
                 </div>
             </div>

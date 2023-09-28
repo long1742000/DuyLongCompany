@@ -1,0 +1,130 @@
+.foot {
+    position: relative;
+    min-height: 400px;
+    background-color: black;
+    opacity: 0.8;
+    text-align: center;
+
+    img {
+        position: absolute;
+        background-color: white;
+        height: 50px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .cont {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        width: 80%;
+
+        .message {
+            font-family: "Roboto", sans-serif;
+            font-size: 21px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .form {
+            position: relative;
+            width: 70%;
+            border: 3px solid black;
+            right: 50%;
+            transform: translate(90%, 0);
+
+            a {
+                font-size: 30px;
+                transition: 0.5s;
+                color: white;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+
+            a:hover {
+                opacity: 0.5;
+            }
+
+            input {
+                font-size: 30px;
+                background: white;
+                border: none;
+                width: 80%;
+                border-radius: 5px;
+                padding-left: 10px;
+                font-family: "Roboto", sans-serif, 'FontAwesome';
+                padding: 5px 10px;
+            }
+
+            input:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .foot {
+        .cont {
+            .message {
+                font-size: 18px;
+            }
+
+            .form {
+                a {
+                    font-size: 18px;
+                }
+
+                input {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .foot {
+        .cont {
+            width: 100%;
+
+            .message {
+                font-size: 15px;
+            }
+
+            .form {
+                a {
+                    font-size: 15px;
+                }
+
+                input {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .foot {
+        .cont {
+            width: 100%;
+
+            .message {
+                font-weight: 500;
+
+            }
+
+            .form {
+                a {
+                    font-size: 15px;
+                }
+
+                input {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

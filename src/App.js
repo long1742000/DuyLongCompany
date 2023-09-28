@@ -10,6 +10,7 @@ import store from './redux/store/store';
 import { useEffect, useState } from 'react';
 import Toast from './components/toast';
 import Alert from './components/alert';
+import Footer from './components/footer';
 
 function App() {
 
@@ -33,10 +34,10 @@ function App() {
 
   return (
     <div className='dad'>
+      <Navbar></Navbar>
       <Routes>
         <Route path="/" element={
           <div className='background'>
-            <Navbar></Navbar>
 
             <div className='content'>
 
@@ -52,6 +53,9 @@ function App() {
         } />
         <Route path="/login" element={<Login />} />
       </Routes>
+
+      <Footer></Footer>
+
       <OnTop></OnTop>
       <Contact></Contact>
       <Toast toast={reduxState.toast}></Toast>

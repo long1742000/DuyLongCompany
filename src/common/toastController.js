@@ -1,3 +1,4 @@
+import Icon from "../data/icon";
 import { done, report } from "../redux/actions/toastAction";
 import store from "../redux/store/store";
 
