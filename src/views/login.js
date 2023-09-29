@@ -13,6 +13,7 @@ const Login = () => {
     // State
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [waiting, setWaiting] = useState(false);
 
     // Navigate
     const navigate = useNavigate();
@@ -27,6 +28,20 @@ const Login = () => {
         }
     }, [])
 
+    useEffect(() => {
+
+        const back = document.getElementsByClassName('back')[0];
+
+        if (waiting) {
+            back.style.top = '-500px';
+            back.style.left = '-500px';
+        }
+        else {
+            back.style.top = '-75px';
+            back.style.left = '-75px';
+        }
+    }, [waiting])
+
     // function control the user when they tried to sign in
     const signIn = () => {
         if (username === '' || password === '') {
@@ -34,10 +49,12 @@ const Login = () => {
         }
         else {
             click(Icon.waiting, 'Wait a sec...');
+            setWaiting(true);
 
             setTimeout(() => {
                 const acc = { username: username, password: password };
                 if (!checkAccount(acc)) {
+                    setWaiting(false);
                     click(Icon.danger, 'Something was wrong');
                 }
 
@@ -54,6 +71,12 @@ const Login = () => {
     return (
         <>
             <div className='bg'>
+                {/* Go Back button */}
+                <div className='back' onClick={() => { navigate(-1) }}>
+                    <i className="fa-solid fa-arrow-rotate-left"></i>
+                </div>
+
+                {/* Form login */}
                 <div className='form-login'>
                     {/* Logo */}
                     <div className='logo'>

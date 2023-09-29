@@ -22,7 +22,7 @@
             top: 50%;
             transform: translate(0, -50%);
             z-index: 1;
-            transition: 0.5s;
+            transition: 1s;
 
             img {
                 width: 100px;
@@ -62,13 +62,13 @@
 
             .username {
                 padding: 5px 10px;
-                transition: 0.5s;
+                transition: 0.2s;
                 padding-left: 0;
 
                 input {
                     border: none;
                     width: 0;
-                    transition: 0.5s;
+                    transition: 0.2s;
                     padding-left: 15px;
                 }
 
@@ -78,19 +78,19 @@
 
                 .icon {
                     opacity: 0;
-                    transition: 0.5s;
+                    transition: 0.2s;
                 }
             }
 
             .password {
                 padding: 5px 10px;
-                transition: 0.5s;
+                transition: 0.2s;
                 padding-left: 0;
 
                 input {
                     border: none;
                     width: 0;
-                    transition: 0.5s;
+                    transition: 0.2s;
                     padding-left: 15px;
                 }
 
@@ -100,7 +100,7 @@
 
                 .icon {
                     opacity: 0;
-                    transition: 0.5s;
+                    transition: 0.2s;
                 }
             }
 
@@ -111,7 +111,7 @@
                 color: white;
                 text-decoration: none;
                 right: 100px;
-                transition: 0.5s;
+                transition: 0.2s;
                 cursor: pointer;
                 opacity: 0;
             }
@@ -166,7 +166,31 @@
                 opacity: 0.7;
             }
         }
+    }
 
+    .back {
+        position: fixed;
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        transform: rotate(45deg);
+        font-size: 30px;
+        cursor: pointer;
+        transition: 0.5s;
+
+        i {
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            transform: rotate(-45deg);
+            transition: 0.5s;
+        }
+    }
+
+    .back:hover {
+        i {
+            transform: rotate(-405deg);
+        }
     }
 
     @media screen and (min-height: 800px) {
