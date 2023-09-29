@@ -11,6 +11,8 @@ import { useEffect, useState } from 'react';
 import Toast from './components/toast';
 import Alert from './components/alert';
 import Footer from './components/footer';
+import PageTitle from './components/pageTitle';
+import Icon from './data/icon';
 
 function App() {
 
@@ -38,6 +40,12 @@ function App() {
       <Routes>
         <Route path="/" element={
           <div className='background'>
+
+            {/* Page title (title - category - icon) */}
+            <PageTitle
+              title='Home page'
+              icon={Icon.home}
+            ></PageTitle>
 
             <div className='content'>
 

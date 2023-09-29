@@ -1,0 +1,211 @@
+.pageTitle {
+    position: relative;
+    height: 600px;
+    background-color: black;
+    z-index: 1;
+    margin-top: 80px;
+    opacity: 0.8;
+    color: white;
+    overflow: hidden;
+
+    .title {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-family: 'Montserrat', sans-serif;
+
+        h1 {
+            line-height: 10px;
+            font-size: 100px;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+    }
+
+    .decoreA {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+
+        .decoreB {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            -webkit-animation: spin 20s linear infinite;
+            -moz-animation: spin 20s linear infinite;
+            animation: spin 20s linear infinite;
+
+            i {
+                position: absolute;
+                font-size: 30px;
+                -webkit-animation: iconSpin 10s linear infinite;
+                -moz-animation: iconSpin 10s linear infinite;
+                animation: iconSpin 10s linear infinite;
+            }
+
+            .b {
+                right: 50%;
+                top: -20%;
+            }
+
+            .c {
+                right: 0;
+            }
+
+            .d {
+                top: 50%;
+                right: -20%;
+            }
+
+            .e {
+                bottom: 0;
+                right: 0;
+            }
+
+            .f {
+                bottom: -20%;
+                right: 50%;
+            }
+
+            .g {
+                bottom: 0;
+            }
+
+            .h {
+                left: -20%;
+                top: 50%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1136px) {
+        .decoreA {
+            .decoreB {
+                width: 600px;
+                height: 600px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1083px) {
+        .title {
+
+            h1 {
+                font-size: 80px;
+            }
+
+            h3 {
+                font-size: 30px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 867px) {
+        .title {
+
+            h1 {
+                font-size: 60px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+        }
+
+        .decoreA {
+            .decoreB {
+                width: 400px;
+                height: 400px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 652px) {
+
+        height: 400px;
+
+        .title {
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 572px) {
+
+        .decoreA {
+            .decoreB {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 436px) {
+
+        height: 250px;
+
+        .title {
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 10px;
+            }
+        }
+
+        .decoreA {
+            .decoreB {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes iconSpin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes iconSpin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes iconSpin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
