@@ -140,6 +140,14 @@ const Navbar = () => {
                                         </div>
                                     </li>
                                 </a>
+                                <a href='#'>
+                                    <li>
+                                        Our events
+                                        <div className='icon'>
+                                            <i className="fa-solid fa-calendar-check"></i>
+                                        </div>
+                                    </li>
+                                </a>
                             </ul>
 
                             {localStorage.getItem('user') &&

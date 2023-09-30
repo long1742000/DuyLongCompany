@@ -13,6 +13,7 @@ import Alert from './components/alert';
 import Footer from './components/footer';
 import PageTitle from './components/pageTitle';
 import Icon from './data/icon';
+import Recommend from './components/recommend';
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
               title='Home page'
               icon={Icon.home}
             ></PageTitle>
+            <Recommend></Recommend>
 
             <div className='content'>
 

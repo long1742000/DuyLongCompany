@@ -2,7 +2,7 @@ import '../styles/pageTitle.scss';
 
 const PageTitle = (props) => {
     return (
-        <div className="pageTitle">
+        <div id='header' className="pageTitle">
 
             <div className='decoreA'>
                 <div className='decoreB'>

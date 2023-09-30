@@ -42,6 +42,10 @@
 
 .text {
     bottom: 10px;
+
+    p:hover {
+        text-decoration: underline;
+    }
 }
 
 .infor:hover {

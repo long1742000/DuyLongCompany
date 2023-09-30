@@ -1,0 +1,260 @@
+.recommend {
+    position: relative;
+    height: 70px;
+    background-color: rgb(110, 110, 110);
+    cursor: context-menu;
+    z-index: 1;
+
+    .recommend-contain {
+        position: absolute;
+        width: 80%;
+        right: 50%;
+        transform: translate(50%, 0);
+
+        .recommend-content {
+            position: relative;
+            width: 80%;
+            height: 70px;
+            float: left;
+            transition: 0.5s;
+
+            .recommend-title {
+                float: left;
+                font-size: 20px;
+                color: white;
+                text-align: center;
+                width: 20%;
+
+            }
+
+            .recommend-text {
+                float: left;
+                font-size: 20px;
+                color: white;
+                text-align: left;
+            }
+
+            .btn-more {
+                position: absolute;
+                cursor: pointer;
+                border: 1px solid white;
+                width: 100px;
+                height: 40px;
+                overflow: hidden;
+                right: 30px;
+                top: 50%;
+                transform: translate(0, -50%);
+
+                p {
+                    position: absolute;
+                    color: white;
+                    font-weight: 600;
+                    overflow: hidden;
+                    transition: 0.5s;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%, -130%);
+                }
+
+                .btn-more-bg-color {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 50px;
+                    width: 0;
+                    background-color: white;
+                    transition: 0.5s;
+                    z-index: -1;
+                }
+            }
+
+            .btn-more:hover {
+                p {
+                    color: rgb(110, 110, 110);
+                }
+
+                .btn-more-bg-color {
+                    width: 100%;
+                }
+            }
+        }
+
+        .btn-turn {
+            position: relative;
+            font-size: 50px;
+            width: 10%;
+            height: 70px;
+            color: white;
+            transition: 0.5s;
+            cursor: pointer;
+
+            i {
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                transition: 0.5s;
+            }
+        }
+
+        .btn-turn:hover {
+            background-color: rgb(115, 115, 115);
+        }
+
+        .recommend-left {
+            float: left;
+
+            i {
+                right: 0;
+            }
+        }
+
+        .recommend-left:hover {
+            i {
+                right: 30%;
+            }
+        }
+
+        .recommend-right {
+            float: right;
+
+            i {
+                left: 0;
+            }
+        }
+
+        .recommend-right:hover {
+            i {
+                left: 30%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1300px) {
+        height: 65px;
+
+        .recommend-contain {
+            .recommend-content {
+                height: 65px;
+
+                .recommend-title {
+                    font-size: 18px;
+                }
+
+                .recommend-text {
+                    font-size: 18px;
+                }
+            }
+
+            .btn-turn {
+                font-size: 45px;
+                height: 65px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1300px) {
+        height: 60px;
+
+        .recommend-contain {
+            .recommend-content {
+                height: 60px;
+
+                .recommend-title {
+                    font-size: 16px;
+                }
+
+                .recommend-text {
+                    font-size: 16px;
+                }
+            }
+
+            .btn-turn {
+                font-size: 40px;
+                height: 60px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+        height: 55px;
+
+        .recommend-contain {
+            .recommend-content {
+                height: 55px;
+
+                .recommend-title {
+                    font-size: 14px;
+                }
+
+                .recommend-text {
+                    font-size: 14px;
+                }
+            }
+
+            .btn-turn {
+                font-size: 40px;
+                height: 55px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 988px) {
+        height: 50px;
+
+        .recommend-contain {
+            .recommend-content {
+                height: 50px;
+
+                .recommend-title {
+                    font-size: 12px;
+                }
+
+                .recommend-text {
+                    font-size: 12px;
+                }
+
+                .btn-more {
+                    width: 70px;
+                    height: 30px;
+                }
+            }
+
+            .btn-turn {
+                font-size: 35px;
+                height: 50px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 832px) {
+        height: 45px;
+
+        .recommend-contain {
+            .recommend-content {
+                height: 45px;
+
+                .recommend-title {
+                    font-size: 10px;
+                }
+
+                .recommend-text {
+                    font-size: 10px;
+                }
+
+                .btn-more {
+                    width: 70px;
+                    height: 30px;
+                }
+            }
+
+            .btn-turn {
+                font-size: 30px;
+                height: 45px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 740px) {
+        display: none;
+    }
+}
