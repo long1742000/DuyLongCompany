@@ -11,16 +11,20 @@ const Recommend = () => {
 
     // ComponentDidUpdate
     useEffect(() => {
+
+        // Set time to change the recommend
         setTimeout(() => {
 
+            // If next is ltr => left to right => recommend 1 > recommend 2 > recommend 3
             if (next === 'ltr') {
-                if (item < 2) {
+                if (item < 2) {             // If item = 1 or 0
                     changeRecommend(1);
                 }
-                else {
+                else {                      // If item = 2 => change next to right to left
                     setNext('rtl');
                 }
             }
+            // If next is rtl => right to left => recommend 1 < recommend 2 < recommend 3
             else {
                 if (item > 0) {
                     changeRecommend(-1);
@@ -34,13 +38,16 @@ const Recommend = () => {
 
     // Function change recommend
     const changeRecommend = (index) => {
-        const content = document.getElementsByClassName('recommend-content')[0];
-        content.style.opacity = 0;
+        // This function only run when user in homepage
+        if (window.location.pathname === '/') {
+            const content = document.getElementsByClassName('recommend-content')[0];
+            content.style.opacity = 0;
 
-        setTimeout(() => {
-            setItem(item + index);
-            content.style.opacity = 1;
-        }, 1000);
+            setTimeout(() => {
+                setItem(item + index);
+                content.style.opacity = 1;
+            }, 1000);
+        }
     }
 
     return (
@@ -53,12 +60,16 @@ const Recommend = () => {
 
                 {/* Content */}
                 <div className='recommend-content'>
+
                     <div className='recommend-title'>
                         <p>{recommend[item].title} :</p>
                     </div>
+
                     <div className='recommend-text'>
                         <p>{recommend[item].text}</p>
                     </div>
+
+                    {/* Button read more */}
                     <div className='btn-more'>
                         <p>READ</p>
                         <div className='btn-more-bg-color'>

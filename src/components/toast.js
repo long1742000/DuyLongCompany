@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 const Toast = (props) => {
 
+    // ComponentDidUpdate
     useEffect(() => {
         const toast = document.getElementsByClassName('toast')[0];
 

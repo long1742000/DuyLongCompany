@@ -7,10 +7,13 @@ import { useDispatch } from 'react-redux';
 
 const Footer = () => {
 
+    // Redux hook
     const dispatch = useDispatch();
 
+    // State
     const [email, setEmail] = useState('');
 
+    // Function send email
     const clickSend = () => {
         if (email === '') {
             click(Icon.danger, 'Please type your email !!!');

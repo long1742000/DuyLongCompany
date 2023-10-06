@@ -1,9 +1,12 @@
 import '../styles/ontop.scss';
 
+// Wait 0.5s to get element
 setTimeout(() => {
     const toTop = document.getElementsByClassName('onTop')[0];
 
+    // Event scroll
     window.addEventListener('scroll', () => {
+        // If user scroll down window > 100px 
         if (window.pageYOffset > 100) {
             toTop.style.bottom = '10px';
         }
@@ -12,6 +15,7 @@ setTimeout(() => {
         }
     })
 
+    // If user click back to top
     toTop.addEventListener('click', () => {
         window.scrollTo(0, 0);
     })

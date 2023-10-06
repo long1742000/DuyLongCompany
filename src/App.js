@@ -31,6 +31,7 @@ function App() {
     }, 500)
   }
 
+  // ComponentDidUpdate
   useEffect(() => {
     checkChanged();
   }, [reduxState])
@@ -47,6 +48,8 @@ function App() {
               title='Home page'
               icon={Icon.home}
             ></PageTitle>
+
+            {/* Recommend */}
             <Recommend></Recommend>
 
             <div className='content'>
