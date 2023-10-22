@@ -8,6 +8,7 @@ const Recommend = () => {
     // States
     const [item, setItem] = useState(0);
     const [next, setNext] = useState('ltr');
+    const [time, setTime] = useState(5000);
 
     // ComponentDidUpdate
     useEffect(() => {
@@ -33,7 +34,7 @@ const Recommend = () => {
                     setNext('ltr');
                 }
             }
-        }, 5000)
+        }, time)
     }, [item, next])
 
     // Function change recommend
@@ -42,6 +43,7 @@ const Recommend = () => {
         if (window.location.pathname === '/') {
             const content = document.getElementsByClassName('recommend-content')[0];
             content.style.opacity = 0;
+            setTime(5000);
 
             setTimeout(() => {
                 setItem(item + index);

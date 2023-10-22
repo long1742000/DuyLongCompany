@@ -3,6 +3,9 @@ import '../styles/navbar.scss';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { turnOn } from '../redux/actions/alertAction';
+import Icon from '../data/icon.js';
+import { click } from '../common/toastController';
+import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
 
@@ -20,7 +23,7 @@ const Navbar = () => {
 
     // Control menu
     const toggle = () => {
-        const menu = document.getElementsByClassName('menu')[0];
+        const menu = document.getElementsByClassName('navbar')[0];
         menu.classList.toggle('turn-on');
     }
 
@@ -28,6 +31,11 @@ const Navbar = () => {
     const search = () => {
         const search = document.getElementsByClassName('search')[0];
         search.classList.toggle('turn-on');
+    }
+
+    // Ask customers to log in
+    const signInPlease = () => {
+        click(Icon.infor, 'Sign in to use it');
     }
 
     // Logout
@@ -50,7 +58,7 @@ const Navbar = () => {
                     <div className="navbar">
                         {/* LOGO */}
                         <div className="logo">
-                            <img src={require('../assets/images/logo.png')} alt='Loading...'></img>
+                            <img onClick={() => { navigate('/') }} src={require('../assets/images/logo.png')} alt='Loading...'></img>
                         </div>
 
                         {/* TOGGLE */}
@@ -59,6 +67,8 @@ const Navbar = () => {
                         </div>
 
                         {/* MENU */}
+                        <div className='outside-menu' onClick={() => { toggle() }}></div>
+
                         <div className='menu'>
                             {/* TURN OFF */}
                             <a className='turn-off' onClick={() => { toggle() }}>
@@ -72,17 +82,25 @@ const Navbar = () => {
                                 <p className='hello'>Hello {user.lastname}, what do you want us to do ?</p>
                             }
                             {!user &&
-                                <p onClick={() => { navigate('/login') }} className='hello'>Hello guest, sign in to use our services?</p>
+                                <HashLink to={'/login#header'} className='hello'>Hello guest, sign in to use our services?</HashLink>
                             }
                             <hr></hr>
 
                             {/* MENU LIST */}
                             <ul>
                                 <a className={user ? '' : 'guest'}>
-                                    <li onClick={user ? () => { search() } : () => { console.log('sign in please') }}>
+                                    <li onClick={user ? () => { search() } : () => { signInPlease() }}>
                                         Search service
                                         <div className='icon'>
                                             <i className="fa-solid fa-magnifying-glass"></i>
+                                        </div>
+                                    </li>
+                                </a>
+                                <a className={user ? '' : 'guest'} href='#'>
+                                    <li>
+                                        About Hosting/Domain
+                                        <div className='icon'>
+                                            <i className="fa-solid fa-server"></i>
                                         </div>
                                     </li>
                                 </a>
@@ -124,30 +142,30 @@ const Navbar = () => {
                             <hr></hr>
 
                             <ul>
-                                <a href='#'>
+                                <HashLink smooth to='/about/#header'>
                                     <li>
                                         About DL
                                         <div className='icon'>
-                                            <i className="fa-solid fa-people-group"></i>
+                                            <i className="fa-solid fa-building"></i>
                                         </div>
                                     </li>
-                                </a>
-                                <a href='#'>
+                                </HashLink>
+                                <HashLink smooth to='/about/#history'>
                                     <li>
                                         Our history
                                         <div className='icon'>
                                             <i className="fa-solid fa-book-bookmark"></i>
                                         </div>
                                     </li>
-                                </a>
-                                <a href='#'>
+                                </HashLink>
+                                <HashLink smooth to='/about/#event'>
                                     <li>
                                         Our events
                                         <div className='icon'>
                                             <i className="fa-solid fa-calendar-check"></i>
                                         </div>
                                     </li>
-                                </a>
+                                </HashLink>
                             </ul>
 
                             {localStorage.getItem('user') &&
@@ -167,6 +185,7 @@ const Navbar = () => {
                                 </>
                             }
                         </div>
+
                     </div>
 
                     {/* SEARCH BAR */}

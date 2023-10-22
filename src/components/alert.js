@@ -19,10 +19,12 @@ const Alert = (props) => {
 
         if (props.alert !== '') {
             alert.style.top = '0';
+            alert.style.opacity = '1';
             setI(props.alert.icon);
         }
         else {
             alert.style.top = '-120%';
+            alert.style.opacity = '0';
         }
 
     }, [props])

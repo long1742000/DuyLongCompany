@@ -70,7 +70,7 @@ const Login = () => {
 
     return (
         <>
-            <div className='bg'>
+            <div id='header' className='bg'>
                 {/* Go Back button */}
                 <div className='back' onClick={() => { navigate(-1) }}>
                     <i className="fa-solid fa-arrow-rotate-left"></i>

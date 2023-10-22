@@ -1,8 +1,10 @@
 const Icon = {
     waiting: 'fa-solid fa-circle-notch fa-spin',
+    infor: 'fa-solid fa-circle-info',
     danger: 'fa-solid fa-triangle-exclamation',
     success: 'fa-solid fa-circle-check',
     home: 'fa-solid fa-house',
+    company: 'fa-solid fa-building',
     fe: 'fa-solid fa-code',
     be: 'fa-solid fa-gears',
     db: 'fa-solid fa-database',

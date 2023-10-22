@@ -1,0 +1,110 @@
+.formReview {
+    position: fixed;
+    right: -120px;
+    top: 300px;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    opacity: 0;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    transform: scale(0);
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .turnOff {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 20px;
+        color: gray;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    .turnOff:hover {
+        opacity: 0.5;
+    }
+
+    .formReview-rating {
+        font-size: 20px;
+
+        label {
+            margin: 10px;
+            color: gray;
+            transition: 0.2s;
+            float: right;
+            cursor: pointer;
+        }
+    }
+
+    .formReview-text {
+
+        p {
+            text-align: center;
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 220px;
+            height: 200px;
+            border: 1px solid rgb(214, 214, 214);
+            border-radius: 5px;
+            resize: none;
+            font-size: 15px;
+            font-family: "Roboto", sans-serif;
+            color: gray;
+            padding: 10px;
+        }
+
+        textarea:focus {
+            outline: none;
+        }
+    }
+
+    .formReview-send {
+        margin-top: 10px;
+        padding: 5px 100px;
+        border: 2px solid gray;
+        background-color: gray;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        p {
+            margin: 0;
+            color: white
+        }
+    }
+
+    .formReview-send:hover {
+        opacity: 0.5;
+    }
+
+    input:not(:checked)~label:hover,
+    input:not(:checked)~label:hover~label {
+        color: rgb(230, 230, 0);
+    }
+
+    input:checked~label {
+        color: rgb(230, 230, 0);
+    }
+}
+
+.display {
+    transform: scale(100%);
+    right: 60px;
+    top: 100px;
+    opacity: 1;
+    z-index: 3;
+}
+
+@media screen and (max-width: 364px) {
+    .display {
+        right: 15px;
+    }
+}

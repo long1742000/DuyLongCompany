@@ -14,6 +14,7 @@ import Footer from './components/footer';
 import PageTitle from './components/pageTitle';
 import Icon from './data/icon';
 import Recommend from './components/recommend';
+import AboutDL from './views/aboutDL';
 
 function App() {
 
@@ -56,6 +57,27 @@ function App() {
 
               {/* ------Content------ */}
               <Home></Home>
+
+            </div>
+
+            <div className='decoreX'></div>
+            <div className='decoreY'></div>
+            <div className='decoreZ'></div>
+          </div>
+        } />
+        <Route path="/about" element={
+          <div className='background'>
+
+            {/* Page title (title - category - icon) */}
+            <PageTitle
+              title='About Us'
+              icon={Icon.company}
+            ></PageTitle>
+
+            <div className='content'>
+
+              {/* ------Content------ */}
+              <AboutDL></AboutDL>
 
             </div>
 

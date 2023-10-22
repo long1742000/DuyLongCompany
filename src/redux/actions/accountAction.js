@@ -1,3 +1,10 @@
+const request = () => {
+    return {
+        type: 'request',
+        payload: '',
+    }
+}
+
 const login = (account) => {
     return {
         type: 'login',
@@ -11,4 +18,4 @@ const logout = (account) => {
     }
 }
 
-export { login, logout };
+export { request, login, logout };
