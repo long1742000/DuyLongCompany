@@ -11,6 +11,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { EffectCoverflow } from 'swiper/modules';
 import FormReview from '../components/formReview';
+import { HashLink } from 'react-router-hash-link';
 
 const Home = () => {
 
@@ -29,7 +30,7 @@ const Home = () => {
             let counter = setInterval(() => {
                 start += 1;
                 value.textContent = start + '+';
-                if (start == end) {
+                if (start === end) {
                     clearInterval(counter);
                 }
             }, duration);
@@ -78,8 +79,8 @@ const Home = () => {
         const showIcon = () => {
             let maxWidth = contain.scrollWidth - contain.clientWidth;
             setTimeout(() => {
-                btn[0].style.display = contain.scrollLeft == 0 ? 'none' : 'block';
-                btn[1].style.display = Math.round(contain.scrollLeft + 1) == maxWidth ? 'none' : 'block';
+                btn[0].style.display = contain.scrollLeft === 0 ? 'none' : 'block';
+                btn[1].style.display = Math.round(contain.scrollLeft + 1) === maxWidth ? 'none' : 'block';
             }, 50)
         }
         // }
@@ -113,7 +114,7 @@ const Home = () => {
                     <p>We always want to bring you the best technology. Our team prioritizes customers, always takes the prestige as standard. We are always aiming for the latest technologies to ensure our customers are always satisfied with our services...</p>
                     <br />
                     <center>
-                        <a href='#' className='read-more'>READ MORE</a>
+                        <HashLink to={`/about#header`} className='read-more'>READ MORE</HashLink>
                     </center>
                 </div>
 
@@ -211,7 +212,7 @@ const Home = () => {
                     {/* EVENTS */}
                     <div className='home-company-event'>
                         <h1 className='home-event-title hidden'>
-                            EVENTS
+                            NEW EVENTS
                         </h1>
 
                         <div className='home-slide-event hidden'>

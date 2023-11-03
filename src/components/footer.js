@@ -49,6 +49,7 @@ const Footer = () => {
                                 <i className="fa-regular fa-paper-plane"></i>
                             </a>
                         </div>
+                        <p className='creative'><i className="fa-brands fa-creative-commons"></i> Design by DuyLong</p>
                     </div>
                 }
 
@@ -77,6 +78,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className='map'>
+                            <p className='creative'><i className="fa-brands fa-creative-commons"></i> Design by DuyLong</p>
                             <div className="gmap_canvas">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.5972097981894!2d106.62342397533985!3d10.842104889310669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752a297b598cd3%3A0x6bc36a49eb94ad85!2zQ2h1bmcgQ8awIEFuIFPGsMahbmcsIMSQw7RuZyBIxrBuZyBUaHXhuq1uLCBRdeG6rW4gMTIsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1697552363476!5m2!1svi!2s"></iframe>
                                 <a href="https://techwithlove.com/"></a>

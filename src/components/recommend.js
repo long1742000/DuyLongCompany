@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../styles/recommend.scss';
 import { recommend } from '../data/recommend';
 import { useEffect } from 'react';
+import { HashLink } from 'react-router-hash-link';
 
 const Recommend = () => {
 
@@ -73,7 +74,7 @@ const Recommend = () => {
 
                     {/* Button read more */}
                     <div className='btn-more'>
-                        <p>READ</p>
+                        <HashLink to={`/about#${recommend[item].location}`}>READ</HashLink>
                         <div className='btn-more-bg-color'>
 
                         </div>

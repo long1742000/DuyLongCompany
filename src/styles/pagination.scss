@@ -1,0 +1,22 @@
+.pagination {
+    position: relative;
+    margin: auto;
+    text-align: center;
+
+    a {
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.5s;
+        border-radius: 3px;
+    }
+
+    a:hover {
+        color: white;
+        background-color: rgb(214, 214, 214);
+    }
+
+    .active {
+        color: white;
+        background-color: rgb(214, 214, 214);
+    }
+}

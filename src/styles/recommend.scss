@@ -45,15 +45,16 @@
                 top: 50%;
                 transform: translate(0, -50%);
 
-                p {
+                a {
                     position: absolute;
+                    text-decoration: none;
                     color: white;
                     font-weight: 600;
                     overflow: hidden;
                     transition: 0.5s;
                     top: 50%;
                     right: 50%;
-                    transform: translate(50%, -130%);
+                    transform: translate(50%, -50%);
                 }
 
                 .btn-more-bg-color {
@@ -69,7 +70,7 @@
             }
 
             .btn-more:hover {
-                p {
+                a {
                     color: rgb(110, 110, 110);
                 }
 

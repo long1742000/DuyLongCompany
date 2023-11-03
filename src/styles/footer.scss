@@ -20,6 +20,11 @@
         transform: translate(50%, -50%);
         width: 80%;
 
+        .creative {
+            text-align: center;
+            color: white;
+        }
+
         .message {
             font-family: "Roboto", sans-serif;
             font-size: 21px;
@@ -104,6 +109,11 @@
     .map {
         margin: 0 50px;
         margin-top: 50px;
+
+        .creative {
+            text-align: center;
+            color: white;
+        }
 
         iframe {
             width: 100%;
