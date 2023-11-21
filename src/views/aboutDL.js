@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import '../styles/aboutDL.scss'
 import History from '../components/history';
 import Pagination from '../components/pagination';
+import CareerBtn from '../components/careerBtn';
 
 const AboutDL = () => {
 
@@ -144,15 +145,17 @@ const AboutDL = () => {
                     </div>
                 </div>
 
+                {/* Company history */}
                 <History></History>
 
+                {/* Event list */}
                 <div id='event' className='about-event'>
                     <h1>OUR EVENTS</h1>
 
                     <div className='about-event-list'>
                         <div className='about-event-item hidden'>
                             <div className='event-image'>
-                                <img src={require('../assets/images/homepage/event-1.jpg')}></img>
+                                <img src={require('../assets/images/homepage/event-1.jpg')} alt='Loading...'></img>
                             </div>
                             <div className='event-content'>
                                 <h3>WELCOME MARKETHUB</h3>
@@ -169,7 +172,7 @@ const AboutDL = () => {
                         </div>
                         <div className='about-event-item hidden'>
                             <div className='event-image'>
-                                <img src={require('../assets/images/homepage/event-2.jpg')}></img>
+                                <img src={require('../assets/images/homepage/event-2.jpg')} alt='Loading...'></img>
                             </div>
                             <div className='event-content'>
                                 <h3>TEAM CHALLENGE</h3>
@@ -188,7 +191,7 @@ const AboutDL = () => {
                         </div>
                         <div className='about-event-item hidden'>
                             <div className='event-image'>
-                                <img src={require('../assets/images/homepage/event-3.jpg')}></img>
+                                <img src={require('../assets/images/homepage/event-3.jpg')} alt='Loading...'></img>
                             </div>
                             <div className='event-content'>
                                 <h3>BUILD THE BEST DEVELOPER</h3>
@@ -209,6 +212,10 @@ const AboutDL = () => {
 
                     <Pagination length={9}></Pagination>
                 </div>
+
+                {/* Recruitment */}
+                <CareerBtn></CareerBtn>
+
             </div >
         </>
     )

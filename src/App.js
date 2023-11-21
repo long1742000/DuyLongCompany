@@ -15,6 +15,7 @@ import PageTitle from './components/pageTitle';
 import Icon from './data/icon';
 import Recommend from './components/recommend';
 import AboutDL from './views/aboutDL';
+import Career from './views/career';
 
 function App() {
 
@@ -78,6 +79,27 @@ function App() {
 
               {/* ------Content------ */}
               <AboutDL></AboutDL>
+
+            </div>
+
+            <div className='decoreX'></div>
+            <div className='decoreY'></div>
+            <div className='decoreZ'></div>
+          </div>
+        } />
+        <Route path="/career" element={
+          <div className='background'>
+
+            {/* Page title (title - category - icon) */}
+            <PageTitle
+              title='Careers'
+              icon={Icon.briefcase}
+            ></PageTitle>
+
+            <div className='content'>
+
+              {/* ------Content------ */}
+              <Career></Career>
 
             </div>
 

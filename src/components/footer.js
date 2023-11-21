@@ -4,6 +4,7 @@ import Icon from '../data/icon';
 import '../styles/footer.scss';
 import { turnOn } from '../redux/actions/alertAction';
 import { useDispatch } from 'react-redux';
+import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
 
@@ -66,9 +67,10 @@ const Footer = () => {
                             </div>
                             <div className='member-cont-link'>
                                 <p>About us</p>
-                                <a href='#'>Company</a>
-                                <a href='#'>History</a>
-                                <a href='#'>Events</a>
+                                <HashLink to={'/about#header'}>Company</HashLink>
+                                <HashLink to={'/about#history'}>History</HashLink>
+                                <HashLink to={'/about#event'}>Events</HashLink>
+                                <HashLink to={'/career#header'}>Careers</HashLink>
                             </div>
                             <div className='member-cont-link contact'>
                                 <p>Contact us</p>
