@@ -13,6 +13,7 @@ const Career = () => {
     // States
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
     const [selected, setSelected] = useState('');
     const [experience, setExperience] = useState('');
     const [detail, setDetail] = useState('');
@@ -75,7 +76,7 @@ const Career = () => {
 
     // click send
     const clickSend = () => {
-        if (fullName === '' || email === '' || selected === '' || experience === '' || detail === '') {
+        if (fullName === '' || email === '' || phone === '' || selected === '' || experience === '' || detail === '') {
             click(Icon.infor, 'Please type all information !!!');
         }
         else if (uploaded === 'Upload your CV') {
@@ -182,6 +183,11 @@ const Career = () => {
                         <div className='form-input input-name'>
                             <input onChange={(e) => { setEmail(e.target.value) }} name='email' type='text' autoComplete="off" required></input>
                             <span to='email'>Email</span>
+                        </div>
+
+                        <div className='form-input input-name'>
+                            <input onChange={(e) => { setPhone(e.target.value) }} name='phone' type='text' autoComplete="off" required></input>
+                            <span to='phone'>Phone number</span>
                         </div>
 
                         <div className='form-input'>

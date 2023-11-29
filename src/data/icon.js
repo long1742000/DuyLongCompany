@@ -13,6 +13,7 @@ const Icon = {
     about: 'fa-solid fa-people-group',
     history: 'fa-solid fa-book-bookmark',
     copied: 'fa-solid fa-copy',
+    message: 'fa-regular fa-message',
 };
 
 export default Icon;

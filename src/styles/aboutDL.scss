@@ -381,6 +381,329 @@
         }
     }
 
+    .contact {
+        width: 80%;
+        margin: auto;
+        margin-top: 50px;
+
+        h1 {
+            text-align: center;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: row;
+
+            .contact-form {
+                width: 50%;
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+
+                span {
+                    color: gray;
+                    font-size: 20px;
+                }
+
+                .form-input {
+                    position: relative;
+                    margin: auto;
+                    width: 80%;
+                    margin-bottom: 30px;
+                }
+
+                .input-name {
+                    input {
+                        width: 100%;
+                        border: none;
+                        border-bottom: 1px solid black;
+                        background: none;
+                        outline: none;
+                        font-size: 20px;
+                        padding: 5px;
+                    }
+
+                    span {
+                        position: absolute;
+                        left: 5px;
+                        bottom: 5px;
+                        transition: 0.2s;
+                    }
+
+                    input:valid+span,
+                    input:focus+span {
+                        font-size: 10px;
+                        bottom: 90%;
+                    }
+                }
+
+                .input-name:hover {
+                    span {
+                        font-size: 10px;
+                        bottom: 90%;
+                    }
+                }
+
+                .input-position {
+                    float: left;
+                    width: 100%;
+
+                    .input {
+                        position: relative;
+                        width: 100%;
+                        height: 23px;
+                        border: none;
+                        border-bottom: 1px solid black;
+                        background: none;
+                        outline: none;
+                        font-size: 20px;
+                        padding: 5px;
+                        margin-right: 20px;
+                        cursor: pointer;
+
+                        .input-title {
+                            font-size: 20px;
+                            position: absolute;
+                            left: 5px;
+                            bottom: 5px;
+                            transition: 0.2s;
+                        }
+
+                        .input-arrow {
+                            position: absolute;
+                            right: 10px;
+                            transition: 0.2s;
+                        }
+
+                        .input-value {
+                            position: absolute;
+                            left: 5px;
+                            bottom: 5px;
+                            padding: 0;
+                            margin: 0;
+                            font-size: 20px;
+                            color: black;
+                        }
+
+                        .choose-position {
+                            position: absolute;
+                            width: 100%;
+                            max-height: 170px;
+                            background-color: white;
+                            border: 1px solid black;
+                            left: 0;
+                            z-index: 1;
+                            top: 100%;
+                            display: none;
+                            overflow-y: auto;
+
+                            p {
+                                margin: 0;
+                                padding: 5px;
+                                text-align: left;
+                                color: black;
+                            }
+
+                            p:hover {
+                                background-color: rgb(214, 214, 214);
+                                color: white;
+                            }
+                        }
+                    }
+
+                    .input:hover {
+                        .input-title {
+                            font-size: 10px;
+                            bottom: 90%;
+                        }
+
+                        .input-arrow {
+                            transform: rotate(-90deg);
+                        }
+
+                        .choose-position {
+                            display: block;
+                        }
+                    }
+
+                    .selected {
+                        .input-title {
+                            font-size: 10px;
+                            bottom: 90%;
+                        }
+                    }
+                }
+
+                .input-detail {
+                    margin-top: 100px;
+                    margin-bottom: 100px;
+
+                    textarea {
+                        font-family: "Roboto", sans-serif;
+                        width: 100%;
+                        height: 100px;
+                        padding: 5px;
+                        border: 1px solid black;
+                        outline: none;
+                        font-size: 20px;
+                        resize: none;
+                    }
+
+                    span {
+                        position: absolute;
+                        left: 5px;
+                        top: 5px;
+                        transition: 0.2s;
+                    }
+
+                    textarea:valid+span,
+                    textarea:focus+span {
+                        font-size: 10px;
+                        top: -10%;
+                    }
+                }
+
+                .btn-send {
+                    width: 85%;
+                    margin: auto;
+                    position: relative;
+
+                    .btn {
+                        position: absolute;
+                        top: -80px;
+                        right: 0;
+                        width: 200px;
+                        border: 1px solid black;
+                        text-align: center;
+                        overflow: hidden;
+                        cursor: pointer;
+
+                        p {
+                            margin: 10px;
+                            color: black;
+                            transition: 0.5s;
+                        }
+
+                        .btn-bg {
+                            position: absolute;
+                            background-color: black;
+                            width: 0;
+                            height: 200px;
+                            top: 0;
+                            transition: 0.5s;
+                            z-index: -1;
+                        }
+                    }
+
+                    .btn:hover {
+                        p {
+                            color: white;
+                        }
+
+                        .btn-bg {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .contact-img {
+                position: relative;
+                width: 50%;
+
+                .contact-introcude-img-bg {
+                    position: absolute;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%, -50%);
+                    width: 270px;
+                    height: 270px;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .icon-contain {
+                        position: absolute;
+                        top: 0;
+                        width: 270px;
+                        height: 270px;
+                        -webkit-animation: spin 100s linear infinite;
+                        -moz-animation: spin 100s linear infinite;
+                        animation: spin 100s linear infinite;
+
+                        i {
+                            position: absolute;
+                            font-size: 20px;
+                            -webkit-animation: iconSpin 30s linear infinite;
+                            -moz-animation: iconSpin 30s linear infinite;
+                            animation: iconSpin 30s linear infinite;
+                            transition: 0.5s;
+                        }
+
+                        i:hover {
+                            font-size: 30px;
+                        }
+
+                        .a {
+                            top: 0;
+                            left: 0;
+                        }
+
+                        .b {
+                            right: 50%;
+                            top: -20%;
+                        }
+
+                        .c {
+                            right: 0;
+                        }
+
+                        .d {
+                            top: 50%;
+                            right: -20%;
+                        }
+
+                        .e {
+                            bottom: 0;
+                            right: 0;
+                        }
+
+                        .f {
+                            bottom: -20%;
+                            right: 50%;
+                        }
+
+                        .g {
+                            bottom: 0;
+                            left: 0;
+                        }
+
+                        .h {
+                            left: -20%;
+                            top: 50%;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: 1290px) {
+                flex-direction: column-reverse;
+
+                .contact-form {
+                    width: 100%;
+                }
+
+                .contact-img {
+                    width: 100%;
+                    height: 400px;
+                }
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 95%;
+        }
+    }
+
     .about-event {
         width: 80%;
         margin: auto;

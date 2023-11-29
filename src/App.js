@@ -108,6 +108,21 @@ function App() {
             <div className='decoreZ'></div>
           </div>
         } />
+        <Route path="/searched" element={
+          <div className='background'>
+
+            <div className='content'>
+
+              {/* ------Content------ */}
+              <Career></Career>
+
+            </div>
+
+            <div className='decoreX'></div>
+            <div className='decoreY'></div>
+            <div className='decoreZ'></div>
+          </div>
+        } />
         <Route path="/login" element={<Login />} />
       </Routes>
 

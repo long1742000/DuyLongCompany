@@ -43,7 +43,14 @@
 .text {
     bottom: 10px;
 
-    p:hover {
+    a {
+        position: relative;
+        top: 13px;
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
         text-decoration: underline;
     }
 }

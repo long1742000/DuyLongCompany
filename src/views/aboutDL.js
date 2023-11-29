@@ -1,10 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/aboutDL.scss'
 import History from '../components/history';
 import Pagination from '../components/pagination';
 import CareerBtn from '../components/careerBtn';
+import Icon from '../data/icon';
+import { turnOn } from '../redux/actions/alertAction';
+import { useDispatch } from 'react-redux';
+import { click } from '../common/toastController';
 
 const AboutDL = () => {
+
+    // States
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [selected, setSelected] = useState('');
+    const [detail, setDetail] = useState('');
+
+    // Dispatch state
+    const dispatch = useDispatch();
 
     useEffect(() => {
         // Controller display animation {
@@ -23,6 +37,24 @@ const AboutDL = () => {
         hiddenElements.forEach((el) => observer.observe(el));
         // }
     }, [])
+
+    // Click send
+    const clickSend = () => {
+        if (fullName === '' || email === '' || phone === '' || selected === '' || detail === '') {
+            click(Icon.infor, 'Please type all information !!!');
+        }
+        else if (!email.includes('@')) {
+            click(Icon.infor, 'Your email is wrong !!!');
+        }
+        else {
+            click(Icon.waiting, 'Waiting')
+
+            setTimeout(() => {
+                // Success
+                dispatch(turnOn('Thank you for this, we will respond if necessary.', '', '', ''));
+            }, 3000)
+        }
+    }
 
     return (
         <>
@@ -141,6 +173,79 @@ const AboutDL = () => {
                             <div className='about-perspectives-img-light'></div>
                             <p className='title'>Respect for employees</p>
                             <p>The employees are those who have experienced difficult stages. So is it a mandatory respect for them? Yes, it is required.</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Contact us */}
+                <div id='contact' className='contact'>
+                    <h1>CONTACT US</h1>
+                    <div className='contact-content'>
+
+                        {/* FORM */}
+                        <div className='contact-form'>
+                            <br /><br />
+                            <div className='form-input input-name'>
+                                <input onChange={(e) => { setFullName(e.target.value) }} name='name' type='text' autoComplete="off" required></input>
+                                <span to='name'>Full name</span>
+                            </div>
+
+                            <div className='form-input input-name'>
+                                <input onChange={(e) => { setEmail(e.target.value) }} name='email' type='text' autoComplete="off" required></input>
+                                <span to='email'>Email</span>
+                            </div>
+
+                            <div className='form-input input-name'>
+                                <input onChange={(e) => { setPhone(e.target.value) }} name='phone' type='text' autoComplete="off" required></input>
+                                <span to='phone'>Phone number</span>
+                            </div>
+
+                            <div className='form-input'>
+                                <div className='input-position'>
+                                    <div className={selected === '' ? 'input' : 'input selected'}>
+                                        <span className='input-title'>About ...</span>
+                                        <span className='input-arrow'><i className="fa-solid fa-caret-left"></i></span>
+                                        <p className='input-value'>{selected}</p>
+                                        <div className='choose-position'>
+                                            <p onClick={() => { setSelected('') }}>Nope</p>
+                                            <p onClick={() => { setSelected('Our Products') }}>Our Products</p>
+                                            <p onClick={() => { setSelected('Our Services') }}>Our Services</p>
+                                            <p onClick={() => { setSelected('Our Customer care') }}>Our Customer care</p>
+                                            <p onClick={() => { setSelected('Our Company') }}>Our Company</p>
+                                            <p onClick={() => { setSelected('Other') }}>Other</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='form-input input-detail'>
+                                <textarea onChange={(e) => { setDetail(e.target.value) }} name='detail' type='text' required></textarea>
+                                <span to='detail'>Content</span>
+                            </div>
+
+                            <div className='btn-send'>
+                                <div onClick={() => { clickSend() }} className='btn'>
+                                    <p>SEND</p>
+                                    <div className='btn-bg'></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* IMAGE */}
+                        <div className='contact-img'>
+                            <div className='contact-introcude-img-bg'>
+                                <img src={require('../assets/images/aboutUspage/contact.png')} alt='Loading...'></img>
+                                <div className='icon-contain'>
+                                    <i className={`${Icon.message} a`}></i>
+                                    <i className={`${Icon.message} b`}></i>
+                                    <i className={`${Icon.message} c`}></i>
+                                    <i className={`${Icon.message} d`}></i>
+                                    <i className={`${Icon.message} e`}></i>
+                                    <i className={`${Icon.message} f`}></i>
+                                    <i className={`${Icon.message} g`}></i>
+                                    <i className={`${Icon.message} h`}></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

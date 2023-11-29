@@ -1,3 +1,4 @@
+import { HashLink } from 'react-router-hash-link';
 import '../styles/contact.scss';
 
 const Contact = () => {
@@ -21,7 +22,7 @@ const Contact = () => {
                 <div className='icon'>
                     <i className="fa-regular fa-message i"></i>
                 </div>
-                <p>Want to send us something ?</p>
+                <HashLink to={'/about/#contact'}>Want to send us something ?</HashLink>
             </div>
         </>
     )
